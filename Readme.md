@@ -1,4 +1,4 @@
-# Microservices Project
+# Microservices Template
 
 This project demonstrates a simple microservices architecture using Go, Docker, and Kubernetes. It includes a backend service and a frontend service.
 
@@ -11,6 +11,7 @@ This project demonstrates a simple microservices architecture using Go, Docker, 
   - [Setup and Deployment](#setup-and-deployment)
     - [Using Minikube](#using-minikube)
     - [Service Explanation](#service-explanation)
+    - [Running Kubernetes Microservices](#running-kubernetes-microservices)
 
 ## Project Overview
 
@@ -74,7 +75,7 @@ Explanation of Kubernetes Services
 When you deploy services in Kubernetes, they are accessible within the cluster through different types of services. Below is an explanation of the listed services:
 
 
-<img width="832" alt="image" src="https://github.com/user-attachments/assets/a947f46f-3fad-4a5b-b147-b264a4dc2399">
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/61724fe2-1883-4761-aec6-736badfe3a5e">
 
 
 # backend
@@ -89,19 +90,6 @@ Explanation:
 - Type: ClusterIP: This service is only accessible within the Kubernetes cluster. It does not have an external IP address, meaning it cannot be accessed from outside the cluster.
 - Cluster IP: The internal IP address of the service within the cluster. Other services within the cluster can use this IP address to communicate with the backend service.
 - Ports: This service listens on port 3000 using the TCP protocol. Other services within the cluster can communicate with the backend service on this port.
-
-# commandservice-clusterip-srv
-Name: commandservice-clusterip-srv
-Type: ClusterIP
-Cluster IP: 10.103.202.29
-External IP: <none>
-Ports: 80/TCP
-Age: 33d
-
-Explanation:
-- Type: ClusterIP: This service is also only accessible within the Kubernetes cluster.
-- Cluster IP: The internal IP address of the service within the cluster. Other services within the cluster can use this IP address to communicate with the commandservice-clusterip-srv service.
-- Ports: This service listens on port 80 using the TCP protocol. Other services within the cluster can communicate with the commandservice-clusterip-srv service on this port.
 
 # frontend
 Name: frontend
@@ -129,4 +117,10 @@ Explanation:
 - Type: ClusterIP: This is the default service created by Kubernetes, which is used to manage the Kubernetes cluster.
 - Cluster IP: The internal IP address of the Kubernetes API server.
 - Ports: This service listens on port 443 using the TCP protocol, which is the default port for HTTPS. This is used for secure communication with the Kubernetes API server.
+
+## Running Kubernetes Microservices
+
+<img width="1191" alt="image" src="https://github.com/user-attachments/assets/154908bb-bae3-4ece-a012-c64aa749142b">
+
+
 
