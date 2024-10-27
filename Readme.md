@@ -81,41 +81,41 @@ When you deploy services in Kubernetes, they are accessible within the cluster t
 # backend
 Name: backend
 Type: ClusterIP
-Cluster IP: 10.108.65.182
+CLUSTER-IP: 10.108.65.182
 External IP: <none>
 Ports: 3000/TCP
 Age: 12m
 
 Explanation:
 - Type: ClusterIP: This service is only accessible within the Kubernetes cluster. It does not have an external IP address, meaning it cannot be accessed from outside the cluster.
-- Cluster IP: The internal IP address of the service within the cluster. Other services within the cluster can use this IP address to communicate with the backend service.
+- CLUSTER-IP: The internal IP address of the service within the cluster. Other services within the cluster can use this IP address to communicate with the backend service.
 - Ports: This service listens on port 3000 using the TCP protocol. Other services within the cluster can communicate with the backend service on this port.
 
 # frontend
 Name: frontend
 Type: LoadBalancer
-Cluster IP: 10.103.63.94
+CLUSTER-IP: 10.103.63.94
 External IP: localhost
 Ports: 80:32485/TCP
 Age: 115s
 
 Explanation:
 - Type: LoadBalancer: This service is exposed externally, allowing access from outside the Kubernetes cluster. It uses a load balancer to distribute incoming traffic to the available pods.
-- Cluster IP: The internal IP address of the service within the cluster.
+- CLUSTER-IP: The internal IP address of the service within the cluster.
 - External IP: localhost indicates that the service is accessible via the localhost address. This might be specific to the local Kubernetes setup (e.g., Minikube or kind), where the LoadBalancer service is mapped to localhost for external access.
 - Ports: This service listens on port 80 externally and maps it to port 32485 on the node. The traffic to localhost:80 is forwarded to 32485 on the cluster, which is then directed to the appropriate pods.
 
 # kubernetes
 Name: kubernetes
 Type: ClusterIP
-Cluster IP: 10.96.0.1
+CLUSTER-IP: 10.96.0.1
 External IP: <none>
 Ports: 443/TCP
 Age: 57d
 
 Explanation:
 - Type: ClusterIP: This is the default service created by Kubernetes, which is used to manage the Kubernetes cluster.
-- Cluster IP: The internal IP address of the Kubernetes API server.
+- CLUSTER-IP: The internal IP address of the Kubernetes API server.
 - Ports: This service listens on port 443 using the TCP protocol, which is the default port for HTTPS. This is used for secure communication with the Kubernetes API server.
 
 ## Running Kubernetes Microservices
